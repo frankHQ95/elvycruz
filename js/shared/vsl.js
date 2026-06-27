@@ -1,0 +1,147 @@
+/* ============================================================
+   Finanzas con Visión — vsl.js (compartido por landings de servicio)
+   ============================================================ */
+(function () {
+  'use strict';
+  const $  = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const WA_NUMBER = '525559544198';
+
+  /* Año en footer */
+  const yearEl = $('#year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* Header + barra de progreso */
+  const header = $('#header');
+  const progress = $('#scrollProgress');
+  const onScroll = () => {
+    if (header) header.classList.toggle('scrolled', window.scrollY > 12);
+    if (progress) {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    }
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Menú móvil */
+  const toggle = $('#navToggle');
+  const nav = $('#nav');
+  if (toggle && nav) {
+    const closeNav = () => { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); };
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    $$('a', nav).forEach(a => a.addEventListener('click', closeNav));
+  }
+
+  /* Reveal on scroll */
+  const reveals = $$('.reveal');
+  if ('IntersectionObserver' in window && reveals.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const delay = e.target.dataset.delay || 0;
+          setTimeout(() => e.target.classList.add('is-visible'), delay);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('is-visible'));
+  }
+
+  /* Contadores animados */
+  const counters = $$('.stat-num');
+  if ('IntersectionObserver' in window && counters.length) {
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        if (el.dataset.text) { el.textContent = el.dataset.text; cio.unobserve(el); return; }
+        const target = +el.dataset.count;
+        const suffix = el.dataset.suffix || '';
+        const dur = 1400; const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min((now - start) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        cio.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => cio.observe(el));
+  }
+
+  /* Modal de video VSL */
+  const videoWrap = $('#videoWrap');
+  const modal = $('#videoModal');
+  const modalBody = $('#videoModalBody');
+  if (videoWrap && modal && modalBody) {
+    const src = videoWrap.dataset.video || '';
+    const open = () => {
+      if (src) {
+        // Si es URL de YouTube/Vimeo => iframe; si es archivo mp4 => <video>
+        if (/\.mp4($|\?)/i.test(src)) {
+          modalBody.innerHTML = `<video src="${src}" controls autoplay playsinline></video>`;
+        } else {
+          const sep = src.includes('?') ? '&' : '?';
+          modalBody.innerHTML = `<iframe src="${src}${sep}autoplay=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+        }
+      } else {
+        modalBody.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#fff;text-align:center;padding:2rem;font-family:var(--font-body)">Aquí irá el video de ventas (VSL).<br>Agrega la URL en <code>data-video</code> del bloque del video.</div>`;
+      }
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      modal.classList.remove('open');
+      modalBody.innerHTML = '';
+      document.body.style.overflow = '';
+    };
+    videoWrap.addEventListener('click', open);
+    $('#videoClose')?.addEventListener('click', close);
+    modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+  }
+
+  /* Formulario de leads -> WhatsApp */
+  const form = $('#leadForm');
+  if (form) {
+    const servicio = form.dataset.servicio || 'una asesoría';
+    form.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      const nombre = $('#nombre'), whatsapp = $('#whatsapp'), email = $('#email');
+      let ok = true;
+      [nombre, whatsapp, email].forEach(f => {
+        if (!f) return;
+        const invalid = !f.value.trim() || (f.type === 'email' && !/^[^@]+@[^@]+\.[^@]+$/.test(f.value));
+        f.classList.toggle('error', invalid);
+        if (invalid) ok = false;
+      });
+      if (!ok) return;
+
+      const msg = `Hola Elvia, vi tu información sobre *${servicio}* y quiero agendar mi asesoría gratuita.%0A%0A` +
+        `*Nombre:* ${encodeURIComponent(nombre.value)}%0A` +
+        `*WhatsApp:* ${encodeURIComponent(whatsapp.value)}%0A` +
+        `*Correo:* ${encodeURIComponent(email.value)}`;
+
+      const success = $('#formSuccess');
+      if (success) success.hidden = false;
+      if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: servicio });
+      setTimeout(() => window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, '_blank'), 600);
+    });
+  }
+
+  /* Tracking de CTAs */
+  $$('[data-cta]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof window.fbq === 'function') window.fbq('trackCustom', 'CTAClick', { cta: btn.dataset.cta });
+    });
+  });
+})();

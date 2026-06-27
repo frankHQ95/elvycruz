@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elvia Cruz | Finanzas con Visión — Protege tu patrimonio, asegura tu retiro</title>
+  <meta name="description" content="Más que finanzas, una visión para tu futuro. Asesoría financiera personalizada en protección patrimonial, retiro e inversión. Agenda tu primera asesoría gratis con Elvia Cruz." />
+  <meta name="theme-color" content="#0E1726" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Elvia Cruz | Finanzas con Visión" />
+  <meta property="og:description" content="Más que finanzas, una visión para tu futuro. Protege a tu familia y asegura tu retiro con una estrategia financiera a tu medida." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/Elvy.jpeg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="stylesheet" href="css/index/index.css" />
+
+  <!-- ===== META PIXEL (reemplazar PIXEL_ID) ===== -->
+  <!-- <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'PIXEL_ID'); fbq('track', 'PageView');
+  </script> -->
+</head>
+<body>
+
+  <!-- Barra de progreso de scroll -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand" aria-label="Finanzas con Visión - Inicio">
+        <img src="assets/logo.svg" alt="" class="brand-mark" width="40" height="40" />
+        <span class="brand-text">
+          <strong>Finanzas</strong>
+          <em>con visión</em>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <a href="#beneficios">Soluciones</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#aliados">Aliados</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#agenda" class="btn btn-gold nav-cta">Agendar asesoría</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Asesoría financiera · Protección · Retiro · Inversión</span>
+          <h1>Más que finanzas,<br><span class="text-gold">una visión para tu futuro.</span></h1>
+          <p class="hero-sub">
+            Trabajas duro todos los días. Pero, ¿tu dinero está trabajando para ti?
+            Te ayudo a <strong>proteger a tu familia, asegurar tu retiro</strong> y construir
+            un patrimonio sólido — con una estrategia hecha a tu medida.
+          </p>
+          <div class="hero-cta">
+            <a href="#agenda" class="btn btn-gold btn-lg" data-cta="hero-agenda">Quiero mi asesoría gratis</a>
+            <a href="#calculadora" class="btn btn-ghost btn-lg">Calcular mi retiro</a>
+          </div>
+          <ul class="hero-trust">
+            <li>✓ Primera asesoría sin costo</li>
+            <li>✓ 100% personalizada</li>
+            <li>✓ Sin compromiso</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" data-delay="120">
+          <div class="visual-card">
+            <div class="visual-card-head">
+              <span class="visual-tag">Proyección de patrimonio</span>
+              <span class="visual-trend">▲ Largo plazo</span>
+            </div>
+            <strong class="visual-figure" id="heroFigure" data-to="5492250">$0</strong>
+            <span class="visual-sub">Lo que podrías acumular para tu retiro empezando hoy.</span>
+
+            <svg class="visual-chart" viewBox="0 0 320 150" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#C2A24B" stop-opacity=".45" />
+                  <stop offset="100%" stop-color="#C2A24B" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <path class="chart-area" d="M0,120 L46,108 L92,112 L138,86 L184,76 L230,52 L276,32 L320,20 L320,150 L0,150 Z" fill="url(#areaGrad)" />
+              <path class="chart-line" d="M0,120 L46,108 L92,112 L138,86 L184,76 L230,52 L276,32 L320,20" fill="none" stroke="#C2A24B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            <a href="#calculadora" class="visual-cta">Calcular mi proyección <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="visual-pill visual-pill--top">
+            <span class="pill-dot" aria-hidden="true"></span>
+            Primera asesoría gratis
+          </div>
+          <div class="visual-pill visual-pill--bottom">
+            <span class="pill-label">Respaldada por</span>
+            <strong>Allianz · Prudential · Insignia</strong>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg" aria-hidden="true">
+        <span class="aurora aurora-1"></span>
+        <span class="aurora aurora-2"></span>
+        <span class="grid-overlay"></span>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE / VALORES ============ -->
+    <div class="strip" aria-hidden="true">
+      <div class="marquee">
+        <div class="marquee-track">
+          <span>Protección Patrimonial</span><i>✦</i>
+          <span>Retiro (PPR)</span><i>✦</i>
+          <span>Inversión a largo plazo</span><i>✦</i>
+          <span>Seguro de Vida</span><i>✦</i>
+          <span>Gastos Médicos Mayores</span><i>✦</i>
+          <span>Planeación personalizada</span><i>✦</i>
+          <span>Protección Patrimonial</span><i>✦</i>
+          <span>Retiro (PPR)</span><i>✦</i>
+          <span>Inversión a largo plazo</span><i>✦</i>
+          <span>Seguro de Vida</span><i>✦</i>
+          <span>Gastos Médicos Mayores</span><i>✦</i>
+          <span>Planeación personalizada</span><i>✦</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ PROBLEMA ============ -->
+    <section class="section problema" id="problema">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Hablemos claro</span>
+          <h2>Tu esfuerzo de hoy debería darte tranquilidad mañana.</h2>
+          <p class="section-lead">
+            La mayoría de los profesionistas dependen al 100% de su trabajo. Pero la vida cambia
+            y el dinero, sin un plan, se va. Estas preguntas valen la pena:
+          </p>
+        </div>
+        <div class="cards-3">
+          <article class="pain-card reveal">
+            <span class="pain-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <h3>¿Y tu retiro?</h3>
+            <p>Si dejaras de trabajar dentro de 20 años, ¿con qué vivirías? La pensión rara vez alcanza.</p>
+          </article>
+          <article class="pain-card reveal" data-delay="100">
+            <span class="pain-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+            </span>
+            <h3>¿Y tu familia?</h3>
+            <p>Si mañana faltaras tú, ¿tu familia podría mantener su nivel de vida y sus metas?</p>
+          </article>
+          <article class="pain-card reveal" data-delay="200">
+            <span class="pain-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-8"/><path d="M16 8h5v5"/></svg>
+            </span>
+            <h3>¿Y tus ahorros?</h3>
+            <p>El dinero parado pierde valor cada año. Sin estrategia, trabajas tú, pero tu dinero no.</p>
+          </article>
+        </div>
+        <p class="problema-close reveal">
+          La buena noticia: <strong>todo esto se puede planear.</strong> Y es más simple de lo que crees.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ BENEFICIOS / PILARES ============ -->
+    <section class="section beneficios" id="beneficios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Soluciones a tu medida</span>
+          <h2>Una estrategia financiera integral, en cuatro pilares.</h2>
+          <p class="section-lead">El éxito no solo es generar dinero: es conservarlo, protegerlo y convertirlo en libertad.</p>
+        </div>
+        <div class="cards-4">
+          <article class="benefit-card reveal">
+            <span class="benefit-num">01</span>
+            <h3>Retiro con independencia</h3>
+            <p>Diseñamos tu plan de retiro (PPR) para que llegues a esa etapa con tranquilidad y sin depender de nadie.</p>
+          </article>
+          <article class="benefit-card reveal" data-delay="80">
+            <span class="benefit-num">02</span>
+            <h3>Protección para tu familia</h3>
+            <p>Un seguro de vida y de patrimonio que blinda a quienes más amas, pase lo que pase.</p>
+          </article>
+          <article class="benefit-card reveal" data-delay="160">
+            <span class="benefit-num">03</span>
+            <h3>Inversión con visión</h3>
+            <p>Pones tu dinero a trabajar con estrategias de largo plazo, pensadas para crecer de forma segura.</p>
+          </article>
+          <article class="benefit-card reveal" data-delay="240">
+            <span class="benefit-num">04</span>
+            <h3>Planeación personalizada</h3>
+            <p>Nada de fórmulas genéricas. Un plan diseñado para tu vida, tus metas y tu momento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="section servicios" id="servicios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Servicios</span>
+          <h2>Soluciones financieras para cada etapa de tu vida.</h2>
+          <p class="section-lead">Productos respaldados por las aseguradoras líderes, integrados en una estrategia hecha para ti.</p>
+        </div>
+        <div class="services-grid">
+          <a class="service-card reveal" href="retiro.html">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5-2 7H7c0-2-2-4-2-7a7 7 0 0 1 7-7z"/><path d="M9 21h6M10 18v3M14 18v3"/></svg>
+            </span>
+            <h3>Plan de Retiro (PPR)</h3>
+            <p>Ahorra a largo plazo con beneficios fiscales y llega a tu retiro con independencia.</p>
+            <span class="service-more">Conocer más <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="service-card reveal" data-delay="80" href="seguro-vida.html">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+            </span>
+            <h3>Seguro de Vida</h3>
+            <p>Protege el futuro y el patrimonio de tu familia, pase lo que pase.</p>
+            <span class="service-more">Conocer más <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="service-card reveal" data-delay="160" href="gastos-medicos.html">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v8M8 12h8"/><circle cx="12" cy="12" r="9"/></svg>
+            </span>
+            <h3>Gastos Médicos Mayores</h3>
+            <p>Atiéndete en los mejores hospitales sin que un imprevisto frene tus finanzas.</p>
+            <span class="service-more">Conocer más <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="service-card reveal" data-delay="240" href="inversion.html">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 16l3-4 3 2 5-7"/></svg>
+            </span>
+            <h3>Inversión y Fondos</h3>
+            <p>Pon tu dinero a trabajar con estrategias de crecimiento a tu medida.</p>
+            <span class="service-more">Conocer más <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="service-card reveal" data-delay="320" href="proteccion-patrimonial.html">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v9h14v-9M9 19v-5h6v5"/></svg>
+            </span>
+            <h3>Protección Patrimonial</h3>
+            <p>Blinda lo que has construido y conviértelo en un legado seguro.</p>
+            <span class="service-more">Conocer más <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="service-card reveal" data-delay="400" href="planeacion-financiera.html">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6a1 1 0 0 1 1 1v0a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v0a1 1 0 0 1 1-1z"/><path d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><path d="M9 13l2 2 4-4"/></svg>
+            </span>
+            <h3>Planeación Financiera</h3>
+            <p>Una estrategia integral que conecta todas tus metas en un solo plan.</p>
+            <span class="service-more">Conocer más <span aria-hidden="true">→</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ALIADOS COMERCIALES ============ -->
+    <section class="section aliados" id="aliados">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Aliados comerciales</span>
+          <h2>Respaldada por las aseguradoras líderes del país.</h2>
+          <p class="section-lead">Trabajo de la mano de instituciones sólidas y reconocidas para darte la mayor seguridad y respaldo.</p>
+        </div>
+        <div class="partners reveal">
+          <!-- Coloca los logos en /assets (allianz.png, prudential.png, insignia-life.png). Si falta el archivo, se muestra el nombre. -->
+          <div class="partner">
+            <img src="assets/allianz-distribuidor-autorizado.png" alt="Allianz" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'partner-name',textContent:'Allianz'}))" />
+          </div>
+          <div class="partner">
+            <img src="assets/Prudential-Financial-Logo.png" alt="Prudential" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'partner-name',textContent:'Prudential'}))" />
+          </div>
+          <div class="partner">
+            <img src="assets/logo insignia.png" alt="Insignia Life" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'partner-name',textContent:'Insignia Life'}))" />
+          </div>
+        </div>
+        <p class="partners-note reveal">Respaldo institucional · solidez · confianza para ti y tu familia.</p>
+      </div>
+    </section>
+
+    <!-- ============ PROCESO ============ -->
+    <section class="section proceso" id="proceso">
+      <div class="container">
+        <div class="section-head reveal light">
+          <span class="kicker">Cómo funciona</span>
+          <h2>Empezar es sencillo. Y el primer paso es gratis.</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num">1</span>
+            <h3>Agendas tu asesoría</h3>
+            <p>Eliges día y hora. Sin costo y sin compromiso.</p>
+          </li>
+          <li class="step reveal" data-delay="100">
+            <span class="step-num">2</span>
+            <h3>Analizamos tu situación</h3>
+            <p>Platicamos de tus metas, tu familia y tu momento financiero.</p>
+          </li>
+          <li class="step reveal" data-delay="200">
+            <span class="step-num">3</span>
+            <h3>Diseñamos tu plan</h3>
+            <p>Te presento una estrategia clara, a tu medida y en lenguaje simple.</p>
+          </li>
+          <li class="step reveal" data-delay="300">
+            <span class="step-num">4</span>
+            <h3>Construyes tu futuro</h3>
+            <p>Avanzamos juntos, con acompañamiento en cada paso.</p>
+          </li>
+        </ol>
+        <div class="proceso-cta reveal">
+          <a href="#agenda" class="btn btn-gold btn-lg">Agendar mi primer paso</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CALCULADORA ============ -->
+    <section class="section calculadora" id="calculadora">
+      <div class="container calc-grid">
+        <div class="calc-intro reveal">
+          <span class="kicker">Herramienta gratuita</span>
+          <h2>¿Cuánto necesitas para tu retiro?</h2>
+          <p class="section-lead">
+            Haz un cálculo rápido y descubre cuánto podrías acumular si empiezas hoy.
+            Es una estimación para inspirarte a tomar acción — tu plan real lo diseñamos juntos.
+          </p>
+          <ul class="calc-points">
+            <li>✓ Resultado al instante</li>
+            <li>✓ Sin registrar datos</li>
+            <li>✓ Pensado para PPR e inversión</li>
+          </ul>
+        </div>
+
+        <div class="calc-card reveal" data-delay="120">
+          <form id="calcForm" class="calc-form" novalidate>
+            <div class="field">
+              <label for="edad">Tu edad actual: <output id="edadOut">35</output> años</label>
+              <input type="range" id="edad" min="20" max="60" value="35" step="1" />
+            </div>
+            <div class="field">
+              <label for="retiro">Edad a la que quieres retirarte: <output id="retiroOut">65</output> años</label>
+              <input type="range" id="retiro" min="50" max="75" value="65" step="1" />
+            </div>
+            <div class="field">
+              <label for="aporte">¿Cuánto puedes ahorrar al mes?</label>
+              <div class="input-money">
+                <span>$</span>
+                <input type="number" id="aporte" min="500" step="500" value="3000" inputmode="numeric" />
+                <small>MXN</small>
+              </div>
+            </div>
+
+            <div class="calc-result" id="calcResult" aria-live="polite">
+              <span class="calc-result-label">Podrías acumular aproximadamente</span>
+              <strong class="calc-result-value" id="calcTotal">$0</strong>
+              <div class="calc-breakdown">
+                <span>Tú aportas: <b id="calcAportado">$0</b></span>
+                <span>Rendimiento estimado: <b id="calcRendimiento">$0</b></span>
+              </div>
+            </div>
+
+            <a href="#agenda" class="btn btn-gold btn-block" data-cta="calc-agenda">Quiero un plan real para lograrlo</a>
+            <p class="calc-disclaimer">*Estimación con rendimiento anual referencial del 9%. No constituye una promesa de rendimiento. Tu estrategia personalizada se define en tu asesoría.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ESTADÍSTICAS ============ -->
+    <section class="section stats">
+      <div class="container stats-grid">
+        <div class="stat reveal">
+          <strong class="stat-num" data-count="50" data-suffix="+">0</strong>
+          <span>Familias acompañadas</span>
+        </div>
+        <div class="stat reveal" data-delay="100">
+          <strong class="stat-num" data-count="100" data-suffix="%">0</strong>
+          <span>Primera asesoría gratis</span>
+        </div>
+        <div class="stat reveal" data-delay="200">
+          <strong class="stat-num" data-count="4" data-suffix="">0</strong>
+          <span>Pilares de tu estrategia</span>
+        </div>
+        <div class="stat reveal" data-delay="300">
+          <strong class="stat-num" data-count="0" data-suffix="" data-text="∞">0</strong>
+          <span>Tranquilidad para tu familia</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section class="section sobre-mi" id="sobre-mi">
+      <div class="container sobre-grid">
+        <div class="sobre-photo reveal">
+          <img src="assets/Elvy.jpeg" alt="Elvia Cruz en su oficina" width="480" height="600" />
+        </div>
+        <div class="sobre-copy reveal" data-delay="120">
+          <span class="kicker">Sobre mí</span>
+          <h2>Soy Elvia Cruz, y mi misión es tu tranquilidad.</h2>
+          <p>
+            He acompañado a <strong>decenas de familias</strong> a construir su futuro y proteger su
+            patrimonio. Sé lo que significa trabajar con esfuerzo: por eso me dedico a que ese esfuerzo
+            se convierta en libertad y seguridad para los tuyos.
+          </p>
+          <p>
+            Mi forma de trabajar es simple y humana: te escucho, entiendo tu momento y diseño contigo
+            una estrategia clara — sin tecnicismos, sin presión, y con acompañamiento real en cada paso.
+          </p>
+          <blockquote>
+            "Hoy tomas decisiones financieras. Mañana, esas decisiones construirán tu vida."
+          </blockquote>
+          <a href="#agenda" class="btn btn-dark">Platiquemos sin compromiso</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIOS ============ -->
+    <section class="section testimonios" id="testimonios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Lo que dicen quienes ya planean</span>
+          <h2>Historias de tranquilidad.</h2>
+        </div>
+        <div class="cards-3">
+          <!-- [TESTIMONIO PENDIENTE] Reemplazar con testimonios reales -->
+          <figure class="testi-card reveal">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Por fin entendí mis finanzas. Elvia me explicó todo en palabras simples y hoy mi familia está protegida."</blockquote>
+            <figcaption><strong>[Nombre del cliente]</strong><span>Ciudad de México</span></figcaption>
+          </figure>
+          <figure class="testi-card reveal" data-delay="100">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Empecé mi plan de retiro a tiempo. Ahora sé exactamente hacia dónde voy y duermo tranquilo."</blockquote>
+            <figcaption><strong>[Nombre del cliente]</strong><span>Profesionista independiente</span></figcaption>
+          </figure>
+          <figure class="testi-card reveal" data-delay="200">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Acompañamiento real y cercano. No me vendió un producto, me diseñó una estrategia."</blockquote>
+            <figcaption><strong>[Nombre del cliente]</strong><span>Empresaria</span></figcaption>
+          </figure>
+        </div>
+        <p class="testi-note reveal">Testimonios ilustrativos · se reemplazarán por reseñas reales de clientes.</p>
+      </div>
+    </section>
+
+    <!-- ============ GARANTÍA ============ -->
+    <section class="section garantia">
+      <div class="container garantia-box reveal">
+        <span class="garantia-icon" aria-hidden="true">🤝</span>
+        <h2>Tu primera asesoría es 100% gratis y sin compromiso.</h2>
+        <p>Sin letras chiquitas. Conversamos, te llevas claridad sobre tu situación financiera y tú decides si quieres avanzar. Así de simple.</p>
+        <a href="#agenda" class="btn btn-gold btn-lg">Agendar mi asesoría gratis</a>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section faq" id="faq">
+      <div class="container faq-wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Preguntas frecuentes</span>
+          <h2>Resolvamos tus dudas.</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>¿Cuánto cuesta la primera asesoría?</summary>
+            <p>Nada. La primera asesoría es completamente gratuita y sin compromiso. Mi objetivo es que te lleves claridad sobre tus finanzas.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>¿Es para mí si apenas estoy empezando a ahorrar?</summary>
+            <p>Sí. De hecho, mientras antes empieces, mejor. Diseñamos un plan acorde a tu momento, sin importar con cuánto comiences.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>¿Me vas a presionar para contratar algo?</summary>
+            <p>Para nada. Te presento opciones claras y tú decides a tu ritmo. Mi trabajo es asesorarte, no presionarte.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>¿Qué es un PPR y por qué me conviene?</summary>
+            <p>Es un Plan Personal de Retiro: un instrumento para ahorrar a largo plazo con beneficios fiscales. Te lo explico en simple durante tu asesoría.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>¿Cómo será nuestra primera reunión?</summary>
+            <p>Puede ser presencial o por videollamada. Platicamos de tus metas y tu situación, y de ahí parto para diseñar tu estrategia.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AGENDA / FORMULARIO ============ -->
+    <section class="section agenda" id="agenda">
+      <div class="container agenda-grid">
+        <div class="agenda-copy reveal">
+          <span class="kicker light">Da el primer paso</span>
+          <h2>Tu futuro empieza con una conversación.</h2>
+          <p>Déjame tus datos y te contacto para agendar tu asesoría gratuita. Sin compromiso, en el horario que mejor te acomode.</p>
+          <ul class="agenda-list">
+            <li>✓ Respuesta el mismo día</li>
+            <li>✓ Presencial o videollamada</li>
+            <li>✓ 100% confidencial</li>
+          </ul>
+          <div class="agenda-contact">
+            <a href="https://wa.me/525559544198?text=Hola%20Elvia%2C%20quiero%20agendar%20mi%20asesor%C3%ADa%20gratuita" class="contact-line" target="_blank" rel="noopener">
+              <span aria-hidden="true">💬</span> WhatsApp: 55 5954 4198
+            </a>
+            <a href="mailto:elvi.cruzdom@gmail.com" class="contact-line">
+              <span aria-hidden="true">✉️</span> elvi.cruzdom@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="agenda-card reveal" data-delay="120">
+          <form id="leadForm" class="lead-form" novalidate>
+            <div class="field">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="whatsapp">WhatsApp</label>
+              <input type="tel" id="whatsapp" name="whatsapp" required placeholder="10 dígitos" autocomplete="tel" inputmode="numeric" />
+            </div>
+            <div class="field">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com" autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="interes">¿Qué te interesa?</label>
+              <select id="interes" name="interes">
+                <option value="Retiro (PPR)">Plan de retiro (PPR)</option>
+                <option value="Protección / Seguro de Vida">Protección y seguro de vida</option>
+                <option value="Inversión">Inversión</option>
+                <option value="Planeación integral">Planeación financiera integral</option>
+                <option value="No estoy seguro">Aún no lo sé / quiero orientación</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-gold btn-block btn-lg" data-cta="form-submit">Agendar mi asesoría gratis</button>
+            <p class="form-note">Al enviar, te contacto por WhatsApp para confirmar tu cita.</p>
+            <p class="form-success" id="formSuccess" hidden>✓ ¡Listo! Te redirijo a WhatsApp para confirmar tu asesoría…</p>
+          </form>
+
+          <!-- ===== CALENDLY (opcional): descomentar y poner tu URL =====
+          <div class="calendly-inline-widget" data-url="https://calendly.com/TU-USUARIO/asesoria" style="min-width:320px;height:630px;"></div>
+          <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" class="brand brand--footer">
+          <img src="assets/logo.svg" alt="" class="brand-mark" width="44" height="44" />
+          <span class="brand-text">
+            <strong>Finanzas</strong>
+            <em>con visión</em>
+          </span>
+        </a>
+        <p>Más que finanzas, una visión para tu futuro. Asesoría en protección patrimonial, retiro e inversión.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="#servicios">Servicios</a>
+        <a href="#aliados">Aliados comerciales</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#faq">Preguntas frecuentes</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/525559544198" target="_blank" rel="noopener">WhatsApp: 55 5954 4198</a>
+        <a href="mailto:elvi.cruzdom@gmail.com">elvi.cruzdom@gmail.com</a>
+        <a href="#agenda">Agendar asesoría</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year">2026</span> Elvia Cruz · Finanzas con Visión. Todos los derechos reservados.</span>
+      <span class="footer-legal">Aviso de privacidad · La asesoría no garantiza rendimientos.</span>
+    </div>
+  </footer>
+
+  <!-- ============ WHATSAPP FLOTANTE ============ -->
+  <a href="https://wa.me/525559544198?text=Hola%20Elvia%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20mi%20asesor%C3%ADa%20financiera" class="wa-float" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.7L.5 31.5l8-2.1c2.2 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.3c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-4.7 1.2 1.3-4.6-.3-.5C3.9 20.8 3.3 18.5 3.3 16 3.3 9 9 3.3 16 3.3S28.7 9 28.7 16 23 28.8 16 28.8zm7.4-9.5c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.2-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.8c.2.2 2.6 4 6.3 5.5.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg>
+  </a>
+
+  <script src="js/index/index.js" defer></script>
+</body>
+</html>

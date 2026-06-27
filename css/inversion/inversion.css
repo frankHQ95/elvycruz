@@ -1,0 +1,8 @@
+/* ============================================================
+   Inversión y Fondos — inversion.css
+   Importa la base compartida y aplica ajustes propios de esta página.
+   ============================================================ */
+@import url('../shared/base.css');
+
+/* Espacio reservado para personalizaciones de esta landing
+   (acentos, poster del video, etc.) sin tocar la base. */
