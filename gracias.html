@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>¡Gracias! | Elvia Cruz · Finanzas con Visión</title>
+  <meta name="theme-color" content="#0E1726" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="stylesheet" href="css/gracias/gracias.css" />
+
+  <!-- ===== META PIXEL (reemplazar PIXEL_ID) =====
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID');fbq('track','PageView');fbq('track','Schedule');</script>
+  -->
+</head>
+<body>
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Finanzas con Visión - Inicio">
+        <img src="assets/logo.svg" alt="" class="brand-mark" width="40" height="40" />
+        <span class="brand-text"><strong>Finanzas</strong><em>con visión</em></span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="gracias">
+      <div class="container gracias-card">
+        <div class="check-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h1>¡Gracias! Tu solicitud está en camino.</h1>
+        <p class="lead">Recibí tus datos<span id="svcLine"></span>. En breve <strong>te escribo por WhatsApp</strong> para confirmar el día y la hora de tu asesoría gratuita.</p>
+
+        <ol class="next-steps">
+          <li><span class="num">1</span> Te contacto por WhatsApp el mismo día.</li>
+          <li><span class="num">2</span> Acordamos día y hora (presencial o videollamada).</li>
+          <li><span class="num">3</span> Platicamos y diseñamos tu estrategia. Sin compromiso.</li>
+        </ol>
+
+        <div class="gracias-cta">
+          <a href="https://wa.me/525559544198?text=Hola%20Elvia%2C%20acabo%20de%20agendar%20mi%20asesor%C3%ADa" class="btn btn-wa btn-lg" target="_blank" rel="noopener" id="waBtn">Escribirme ahora por WhatsApp</a>
+          <a href="index.html" class="btn btn-ghost btn-lg" style="color:#fff;border-color:rgba(255,255,255,.35)">Volver al inicio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border:0">
+      <span>© <span id="year">2026</span> Elvia Cruz · Finanzas con Visión.</span>
+      <span class="footer-legal">La asesoría no garantiza rendimientos.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Muestra el servicio que llega por ?s= y refleja en el CTA de WhatsApp
+    const params = new URLSearchParams(location.search);
+    const s = params.get('s');
+    if (s) {
+      const svc = decodeURIComponent(s);
+      document.getElementById('svcLine').textContent = ' sobre ' + svc;
+      const wa = document.getElementById('waBtn');
+      wa.href = 'https://wa.me/525559544198?text=' + encodeURIComponent('Hola Elvia, acabo de agendar mi asesoría sobre ' + svc);
+    }
+    if (typeof window.fbq === 'function') window.fbq('track', 'Schedule');
+  </script>
+</body>
+</html>

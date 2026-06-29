@@ -157,35 +157,47 @@
     calcular();
   }
 
-  /* ---------- Formulario de leads -> WhatsApp ---------- */
+  /* ---------- Formulario de leads -> guardar + WhatsApp + gracias ---------- */
+  // Para guardar los leads: pega la URL de tu Google Apps Script (Web App).
+  // Déjalo vacío para no guardar (el lead igual llega por WhatsApp).
+  const LEAD_ENDPOINT = '';
+
   const form = $('#leadForm');
   if (form) {
     form.addEventListener('submit', (ev) => {
       ev.preventDefault();
-      const nombre = $('#nombre'), whatsapp = $('#whatsapp'), email = $('#email'), interes = $('#interes');
+      const nombre = $('#nombre'), whatsapp = $('#whatsapp'), interes = $('#interes');
       let ok = true;
-      [nombre, whatsapp, email].forEach(f => {
-        const invalid = !f.value.trim() || (f.type === 'email' && !/^[^@]+@[^@]+\.[^@]+$/.test(f.value));
+      [nombre, whatsapp].forEach(f => {
+        const invalid = !f.value.trim() || (f.id === 'whatsapp' && f.value.replace(/\D/g, '').length < 10);
         f.classList.toggle('error', invalid);
         if (invalid) ok = false;
       });
-      if (!ok) { nombre.classList.contains('error') ? nombre.focus() : null; return; }
+      if (!ok) { (nombre.classList.contains('error') ? nombre : whatsapp).focus(); return; }
+
+      const interesVal = interes ? interes.value : 'Asesoría financiera';
+
+      if (LEAD_ENDPOINT) {
+        try {
+          fetch(LEAD_ENDPOINT, {
+            method: 'POST', mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nombre: nombre.value, whatsapp: whatsapp.value, servicio: interesVal, fecha: new Date().toISOString() })
+          });
+        } catch (e) { /* no bloquear la conversión */ }
+      }
 
       const msg = `Hola Elvia, quiero agendar mi asesoría gratuita.%0A%0A` +
         `*Nombre:* ${encodeURIComponent(nombre.value)}%0A` +
         `*WhatsApp:* ${encodeURIComponent(whatsapp.value)}%0A` +
-        `*Correo:* ${encodeURIComponent(email.value)}%0A` +
-        `*Me interesa:* ${encodeURIComponent(interes.value)}`;
+        `*Me interesa:* ${encodeURIComponent(interesVal)}`;
 
       const success = $('#formSuccess');
       if (success) success.hidden = false;
+      if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: interesVal });
 
-      // Evento Meta Pixel (si está activo)
-      if (typeof window.fbq === 'function') window.fbq('track', 'Lead');
-
-      setTimeout(() => {
-        window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, '_blank');
-      }, 600);
+      window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, '_blank');
+      setTimeout(() => { window.location.href = 'gracias.html?s=' + encodeURIComponent(interesVal); }, 700);
     });
   }
 

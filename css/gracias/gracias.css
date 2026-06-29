@@ -1,0 +1,19 @@
+/* ============================================================
+   Página de Gracias — gracias.css
+   ============================================================ */
+@import url('../shared/base.css');
+
+.gracias { position: relative; min-height: 88vh; display: flex; align-items: center; background: linear-gradient(170deg, #142136 0%, var(--ink) 55%, #0a111d 100%); color: #fff; overflow: hidden; padding: 4rem 0; }
+.gracias-card { position: relative; z-index: 2; max-width: 640px; margin-inline: auto; text-align: center; }
+.check-badge { width: 92px; height: 92px; margin: 0 auto 1.6rem; border-radius: 50%; background: rgba(111,211,154,.14); border: 1px solid rgba(111,211,154,.5); display: flex; align-items: center; justify-content: center; animation: pop .6s var(--ease) both; }
+.check-badge svg { width: 46px; height: 46px; stroke: #6fd39a; }
+@keyframes pop { 0% { transform: scale(.5); opacity: 0; } 70% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+.gracias h1 { color: #fff; margin-bottom: 1rem; }
+.gracias .lead { font-size: 1.15rem; color: rgba(255,255,255,.78); margin-bottom: 2rem; }
+.gracias .lead strong { color: var(--gold-soft); }
+.next-steps { list-style: none; display: grid; gap: .9rem; text-align: left; max-width: 440px; margin: 0 auto 2.2rem; }
+.next-steps li { display: flex; align-items: center; gap: .9rem; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: .9rem 1.1rem; font-weight: 500; }
+.next-steps .num { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--gold); color: var(--ink); font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: .9rem; }
+.gracias-cta { display: flex; flex-wrap: wrap; gap: .9rem; justify-content: center; }
+.btn-wa { background: #25d366; color: #fff; }
+.btn-wa:hover { background: #1fb959; transform: translateY(-2px); }

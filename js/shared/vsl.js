@@ -110,31 +110,46 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
   }
 
-  /* Formulario de leads -> WhatsApp */
+  /* Formulario de leads -> guardar + WhatsApp + gracias */
+  // Para guardar los leads: pega aquí la URL de tu Google Apps Script (Web App).
+  // Déjalo vacío para no guardar (el lead igual llega por WhatsApp).
+  const LEAD_ENDPOINT = '';
+
   const form = $('#leadForm');
   if (form) {
     const servicio = form.dataset.servicio || 'una asesoría';
     form.addEventListener('submit', (ev) => {
       ev.preventDefault();
-      const nombre = $('#nombre'), whatsapp = $('#whatsapp'), email = $('#email');
+      const nombre = $('#nombre'), whatsapp = $('#whatsapp');
       let ok = true;
-      [nombre, whatsapp, email].forEach(f => {
+      [nombre, whatsapp].forEach(f => {
         if (!f) return;
-        const invalid = !f.value.trim() || (f.type === 'email' && !/^[^@]+@[^@]+\.[^@]+$/.test(f.value));
+        const invalid = !f.value.trim() || (f.id === 'whatsapp' && f.value.replace(/\D/g, '').length < 10);
         f.classList.toggle('error', invalid);
         if (invalid) ok = false;
       });
-      if (!ok) return;
+      if (!ok) { (nombre.classList.contains('error') ? nombre : whatsapp).focus(); return; }
+
+      // Guardar lead (si hay endpoint configurado)
+      if (LEAD_ENDPOINT) {
+        try {
+          fetch(LEAD_ENDPOINT, {
+            method: 'POST', mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nombre: nombre.value, whatsapp: whatsapp.value, servicio, fecha: new Date().toISOString() })
+          });
+        } catch (e) { /* no bloquear la conversión */ }
+      }
 
       const msg = `Hola Elvia, vi tu información sobre *${servicio}* y quiero agendar mi asesoría gratuita.%0A%0A` +
-        `*Nombre:* ${encodeURIComponent(nombre.value)}%0A` +
-        `*WhatsApp:* ${encodeURIComponent(whatsapp.value)}%0A` +
-        `*Correo:* ${encodeURIComponent(email.value)}`;
+        `*Nombre:* ${encodeURIComponent(nombre.value)}%0A*WhatsApp:* ${encodeURIComponent(whatsapp.value)}`;
 
       const success = $('#formSuccess');
       if (success) success.hidden = false;
       if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: servicio });
-      setTimeout(() => window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, '_blank'), 600);
+
+      window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, '_blank');
+      setTimeout(() => { window.location.href = 'gracias.html?s=' + encodeURIComponent(servicio); }, 700);
     });
   }
 

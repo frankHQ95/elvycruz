@@ -312,6 +312,13 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius
 /* ---------- Barra de progreso de scroll ---------- */
 .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; z-index: 300; background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-soft)); transition: width .1s linear; }
 
+/* ---------- CTA fijo móvil ---------- */
+.mobile-cta { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 250; gap: .6rem; padding: .65rem .9rem calc(.65rem + env(safe-area-inset-bottom)); background: rgba(255,255,255,.92); backdrop-filter: blur(12px); border-top: 1px solid var(--line); box-shadow: 0 -10px 30px -18px rgba(14,23,38,.5); }
+.mcta-main { flex: 1; }
+.mcta-wa { flex-shrink: 0; width: 52px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #25d366; color: #fff; transition: transform .2s var(--ease); }
+.mcta-wa:hover { transform: translateY(-2px); }
+.mcta-wa svg { width: 24px; height: 24px; }
+
 /* ---------- Servicios ---------- */
 .servicios { background:
   radial-gradient(ellipse 60% 50% at 100% 0%, rgba(194,162,75,.06), transparent 60%),
@@ -431,7 +438,9 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius
 }
 
 @media (max-width: 720px) {
-  body { font-size: 16px; }
+  body { font-size: 16px; padding-bottom: 74px; }
+  .mobile-cta { display: flex; }
+  .wa-float { display: none; }
   .nav {
     position: fixed; inset: 0 0 0 auto; width: min(82%, 320px); height: 100dvh;
     background: #fff; flex-direction: column; align-items: flex-start; justify-content: flex-start;
