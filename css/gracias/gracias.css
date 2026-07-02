@@ -1,7 +1,7 @@
 /* ============================================================
    Página de Gracias — gracias.css
    ============================================================ */
-@import url('../shared/base.css');
+@import url('../shared/base.css?v=3');
 
 .gracias { position: relative; min-height: 88vh; display: flex; align-items: center; background: linear-gradient(170deg, #142136 0%, var(--ink) 55%, #0a111d 100%); color: #fff; overflow: hidden; padding: 4rem 0; }
 .gracias-card { position: relative; z-index: 2; max-width: 640px; margin-inline: auto; text-align: center; }

@@ -1,8 +1,11 @@
 /* ============================================================
    Planeación Financiera — planeacion-financiera.css
-   Importa la base compartida y aplica ajustes propios de esta página.
+   Tema propio de esta landing. Importa la base compartida y
+   define su color de acento (todo el resto se hereda de base.css).
    ============================================================ */
-@import url('../shared/base.css');
+@import url('../shared/base.css?v=3');
 
-/* Espacio reservado para personalizaciones de esta landing
-   (acentos, poster del video, etc.) sin tocar la base. */
+:root {
+  --accent: #4E4488;
+  --accent-deep: #393066;
+}

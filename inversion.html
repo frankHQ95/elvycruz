@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
-  <link rel="stylesheet" href="css/inversion/inversion.css" />
+  <link rel="stylesheet" href="css/inversion/inversion.css?v=3" />
 
   <!-- ===== META PIXEL (reemplazar PIXEL_ID) =====
   <script>!function(f,b,e,v,n,t,s2){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s2=b.getElementsByTagName(e)[0];s2.parentNode.insertBefore(t,s2)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID');fbq('track','PageView');</script>
@@ -53,39 +53,18 @@
   </header>
 
   <main>
-    <!-- HERO VSL -->
-    <section class="vsl-hero">
-      <div class="container vsl-inner">
-        <span class="vsl-eyebrow reveal"><span class="dot"></span>Inversión y Fondos</span>
-        <h1 class="reveal" data-delay="80">Haz que tu dinero <span class="text-gold">trabaje tan duro como tú.</span></h1>
-        <p class="vsl-hero-sub reveal" data-delay="160">El dinero parado pierde valor cada año. Mira cómo poner tus ahorros a crecer con una estrategia hecha a tu medida.</p>
-
-        <!-- VIDEO VSL · agrega la URL del video en data-video (YouTube/Vimeo/MP4) -->
-        <div class="video-wrap reveal" id="videoWrap" data-delay="220" data-video="" role="button" tabindex="0" aria-label="Reproducir video">
-          <div class="video-fallback"><span>Finanzas con Visión</span></div>
-          <span class="video-tag"><span class="rec"></span> VIDEO · Míralo antes de decidir</span>
-          <button class="play-btn" aria-label="Reproducir">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-          </button>
+    <!-- HERO VSL (variante por servicio · agrega la URL del video en data-video) -->
+    <section class="vsl-hero vsl-hero--split">
+      <div class="container vsl-split">
+        <div class="vsl-split-copy">
+          <span class="vsl-eyebrow reveal"><span class="dot"></span>Inversión y Fondos</span>
+          <h1 class="reveal" data-delay="80">Haz que tu dinero <span class="text-gold">trabaje tan duro como tú.</span></h1>
+          <p class="vsl-hero-sub reveal" data-delay="160">El dinero parado pierde valor cada año. Mira cómo poner tus ahorros a crecer con una estrategia hecha a tu medida.</p>
+          <div class="vsl-cta reveal" data-delay="300"><div class="btn-row"><a href="#agenda" class="btn btn-gold btn-lg" data-cta="hero-agenda">Quiero mi asesoría gratis</a><a href="https://wa.me/525559544198?text=Hola%20Elvia%2C%20vi%20tu%20informaci%C3%B3n%20sobre%20Inversión%20y%20Fondos%20y%20quiero%20agendar%20mi%20asesor%C3%ADa" class="btn btn-ghost btn-lg" style="color:#fff;border-color:rgba(255,255,255,.35)" target="_blank" rel="noopener">Escribir por WhatsApp</a></div><ul class="vsl-trust"><li>✓ Primera asesoría sin costo</li><li>✓ 100% personalizada</li><li>✓ Sin compromiso</li></ul></div>
         </div>
-
-        <div class="vsl-cta reveal" data-delay="300">
-          <div class="btn-row">
-            <a href="#agenda" class="btn btn-gold btn-lg" data-cta="hero-agenda">Quiero mi asesoría gratis</a>
-            <a href="https://wa.me/525559544198?text=Hola%20Elvia%2C%20vi%20tu%20informaci%C3%B3n%20sobre%20Inversión%20y%20Fondos%20y%20quiero%20agendar%20mi%20asesor%C3%ADa" class="btn btn-ghost btn-lg" style="color:#fff;border-color:rgba(255,255,255,.35)" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-          </div>
-          <ul class="vsl-trust">
-            <li>✓ Primera asesoría sin costo</li>
-            <li>✓ 100% personalizada</li>
-            <li>✓ Sin compromiso</li>
-          </ul>
-        </div>
+        <div class="vsl-split-video reveal" data-delay="120"><div class="video-wrap reveal" id="videoWrap" data-delay="220" data-video="" role="button" tabindex="0" aria-label="Reproducir video"><div class="video-fallback"><span>Finanzas con Visión</span></div><span class="video-tag"><span class="rec"></span> VIDEO · Míralo antes de decidir</span><button class="play-btn" aria-label="Reproducir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div></div>
       </div>
-      <div class="hero-bg" aria-hidden="true">
-        <span class="aurora aurora-1"></span>
-        <span class="aurora aurora-2"></span>
-        <span class="grid-overlay"></span>
-      </div>
+      <div class="hero-bg" aria-hidden="true"><span class="aurora aurora-1"></span><span class="aurora aurora-2"></span><span class="grid-overlay"></span></div>
     </section>
 
     <!-- PROBLEMA -->
@@ -145,6 +124,24 @@
             <p>No estás solo: te guío y ajustamos la estrategia contigo.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN ESTRELLA (única por servicio) -->
+    <section class="section signature sig-growth" id="herramienta">
+      <div class="container">
+        <div class="section-head reveal"><span class="kicker">Simulador</span><h2>Mira crecer tu dinero.</h2><p class="section-lead">Ajusta tu aporte y observa cuánto podrías acumular con el tiempo.</p></div>
+        <div class="growth-controls reveal">
+          <div class="gc-field"><label>Monto inicial</label><div class="input-money"><span>$</span><input type="number" id="gInicial" value="10000" min="0" step="1000" inputmode="numeric"><small>MXN</small></div></div>
+          <div class="gc-field"><label>Aporte mensual</label><div class="input-money"><span>$</span><input type="number" id="gAporte" value="2000" min="500" step="500" inputmode="numeric"><small>MXN</small></div></div>
+        </div>
+        <div class="growth-cards">
+          <div class="growth-card reveal"><span class="gc-label">En 5 años</span><strong id="g5">$0</strong></div>
+          <div class="growth-card reveal" data-delay="100"><span class="gc-label">En 10 años</span><strong id="g10">$0</strong></div>
+          <div class="growth-card featured reveal" data-delay="200"><span class="gc-label">En 20 años</span><strong id="g20">$0</strong></div>
+        </div>
+        <div style="text-align:center;margin-top:2rem"><a href="#agenda" class="btn btn-gold btn-lg" data-cta="growth-agenda">Quiero empezar a invertir</a></div>
+        <p class="calc-disclaimer" style="text-align:center;margin-top:1rem">*Estimación con rendimiento referencial del 10% anual compuesto. No es promesa de rendimiento.</p>
       </div>
     </section>
 
@@ -357,6 +354,6 @@
     </div>
   </div>
 
-  <script src="js/shared/vsl.js" defer></script>
+  <script src="js/shared/vsl.js?v=3" defer></script>
 </body>
 </html>

@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
-  <link rel="stylesheet" href="css/gastos-medicos/gastos-medicos.css" />
+  <link rel="stylesheet" href="css/gastos-medicos/gastos-medicos.css?v=3" />
 
   <!-- ===== META PIXEL (reemplazar PIXEL_ID) =====
   <script>!function(f,b,e,v,n,t,s2){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s2=b.getElementsByTagName(e)[0];s2.parentNode.insertBefore(t,s2)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID');fbq('track','PageView');</script>
@@ -53,39 +53,16 @@
   </header>
 
   <main>
-    <!-- HERO VSL -->
+    <!-- HERO VSL (variante por servicio · agrega la URL del video en data-video) -->
     <section class="vsl-hero">
       <div class="container vsl-inner">
         <span class="vsl-eyebrow reveal"><span class="dot"></span>Gastos Médicos Mayores</span>
         <h1 class="reveal" data-delay="80">Una emergencia médica no debería <span class="text-gold">costarte tu patrimonio.</span></h1>
         <p class="vsl-hero-sub reveal" data-delay="160">Un accidente o una enfermedad inesperada pueden borrar años de ahorro en días. Mira cómo protegerte sin descapitalizarte.</p>
-
-        <!-- VIDEO VSL · agrega la URL del video en data-video (YouTube/Vimeo/MP4) -->
-        <div class="video-wrap reveal" id="videoWrap" data-delay="220" data-video="" role="button" tabindex="0" aria-label="Reproducir video">
-          <div class="video-fallback"><span>Finanzas con Visión</span></div>
-          <span class="video-tag"><span class="rec"></span> VIDEO · Míralo antes de decidir</span>
-          <button class="play-btn" aria-label="Reproducir">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-        </div>
-
-        <div class="vsl-cta reveal" data-delay="300">
-          <div class="btn-row">
-            <a href="#agenda" class="btn btn-gold btn-lg" data-cta="hero-agenda">Quiero mi asesoría gratis</a>
-            <a href="https://wa.me/525559544198?text=Hola%20Elvia%2C%20vi%20tu%20informaci%C3%B3n%20sobre%20Gastos%20Médicos%20Mayores%20y%20quiero%20agendar%20mi%20asesor%C3%ADa" class="btn btn-ghost btn-lg" style="color:#fff;border-color:rgba(255,255,255,.35)" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-          </div>
-          <ul class="vsl-trust">
-            <li>✓ Primera asesoría sin costo</li>
-            <li>✓ 100% personalizada</li>
-            <li>✓ Sin compromiso</li>
-          </ul>
-        </div>
+        <div class="video-wrap reveal" id="videoWrap" data-delay="220" data-video="" role="button" tabindex="0" aria-label="Reproducir video"><div class="video-fallback"><span>Finanzas con Visión</span></div><span class="video-tag"><span class="rec"></span> VIDEO · Míralo antes de decidir</span><button class="play-btn" aria-label="Reproducir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
+        <div class="vsl-cta reveal" data-delay="300"><div class="btn-row"><a href="#agenda" class="btn btn-gold btn-lg" data-cta="hero-agenda">Quiero mi asesoría gratis</a><a href="https://wa.me/525559544198?text=Hola%20Elvia%2C%20vi%20tu%20informaci%C3%B3n%20sobre%20Gastos%20Médicos%20Mayores%20y%20quiero%20agendar%20mi%20asesor%C3%ADa" class="btn btn-ghost btn-lg" style="color:#fff;border-color:rgba(255,255,255,.35)" target="_blank" rel="noopener">Escribir por WhatsApp</a></div><ul class="vsl-trust"><li>✓ Primera asesoría sin costo</li><li>✓ 100% personalizada</li><li>✓ Sin compromiso</li></ul></div>
       </div>
-      <div class="hero-bg" aria-hidden="true">
-        <span class="aurora aurora-1"></span>
-        <span class="aurora aurora-2"></span>
-        <span class="grid-overlay"></span>
-      </div>
+      <div class="hero-bg" aria-hidden="true"><span class="aurora aurora-1"></span><span class="aurora aurora-2"></span><span class="grid-overlay"></span></div>
     </section>
 
     <!-- PROBLEMA -->
@@ -147,6 +124,9 @@
         </div>
       </div>
     </section>
+
+    <!-- SECCIÓN ESTRELLA (única por servicio) -->
+    <section class="section signature sig-compare" id="herramienta"><div class="container"><div class="section-head reveal"><span class="kicker">La diferencia es enorme</span><h2>Lo que pagarías sin seguro… y con él.</h2><p class="section-lead">Costos ilustrativos de eventos médicos comunes en hospitales privados.</p></div><div class="compare-grid"><div class="compare-item reveal"><h3>Cirugía mayor</h3><div class="bar-row"><span class="bar-label">Sin seguro</span><div class="bar"><span class="bar-fill bar-bad" style="--w:90%"></span><b class="bar-amt">$350,000</b></div></div><div class="bar-row"><span class="bar-label">Con seguro</span><div class="bar"><span class="bar-fill bar-good" style="--w:11%"></span><b class="bar-amt">desde $8,000*</b></div></div></div><div class="compare-item reveal"><h3>Hospitalización</h3><div class="bar-row"><span class="bar-label">Sin seguro</span><div class="bar"><span class="bar-fill bar-bad" style="--w:70%"></span><b class="bar-amt">$180,000</b></div></div><div class="bar-row"><span class="bar-label">Con seguro</span><div class="bar"><span class="bar-fill bar-good" style="--w:9%"></span><b class="bar-amt">desde $6,000*</b></div></div></div><div class="compare-item reveal"><h3>Urgencia / accidente</h3><div class="bar-row"><span class="bar-label">Sin seguro</span><div class="bar"><span class="bar-fill bar-bad" style="--w:48%"></span><b class="bar-amt">$90,000</b></div></div><div class="bar-row"><span class="bar-label">Con seguro</span><div class="bar"><span class="bar-fill bar-good" style="--w:7%"></span><b class="bar-amt">desde $4,000*</b></div></div></div></div><p class="calc-disclaimer" style="text-align:center;margin-top:1.4rem">*Montos ilustrativos; dependen del plan, deducible y coaseguro. Solo para fines comparativos.</p></div></section>
 
     <!-- QUÉ INCLUYE -->
     <section class="section" id="incluye">
@@ -357,6 +337,6 @@
     </div>
   </div>
 
-  <script src="js/shared/vsl.js" defer></script>
+  <script src="js/shared/vsl.js?v=3" defer></script>
 </body>
 </html>

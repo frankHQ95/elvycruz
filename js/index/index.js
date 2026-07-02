@@ -181,8 +181,8 @@
         try {
           fetch(LEAD_ENDPOINT, {
             method: 'POST', mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nombre: nombre.value, whatsapp: whatsapp.value, servicio: interesVal, fecha: new Date().toISOString() })
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({ nombre: nombre.value, whatsapp: whatsapp.value, servicio: interesVal, origen: location.pathname, fecha: new Date().toISOString() })
           });
         } catch (e) { /* no bloquear la conversión */ }
       }

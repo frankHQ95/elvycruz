@@ -110,6 +110,62 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
   }
 
+  /* Herramientas interactivas (calculadoras / simulador) */
+  const fmtMX = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 });
+  function animateMoney(el, end, dur) {
+    if (!el) return;
+    const start = +String(el.textContent).replace(/[^0-9.-]/g, '') || 0;
+    const t0 = performance.now();
+    const step = (now) => {
+      const p = Math.min((now - t0) / (dur || 650), 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmtMX.format(Math.round(start + (end - start) * eased));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  const fvAnnuity = (P, i, n, PV) => (PV || 0) * Math.pow(1 + i, n) + (i > 0 ? P * ((Math.pow(1 + i, n) - 1) / i) : P * n);
+
+  // Calculadora de retiro
+  const cEdad = $('#cEdad');
+  if (cEdad) {
+    const cRet = $('#cRet'), cAporte = $('#cAporte');
+    const run = () => {
+      let e = +cEdad.value, r = +cRet.value;
+      if (r <= e) { r = e + 1; cRet.value = r; }
+      $('#cEdadOut').textContent = e; $('#cRetOut').textContent = r;
+      animateMoney($('#cTotal'), fvAnnuity(Math.max(0, +cAporte.value || 0), 0.09 / 12, (r - e) * 12, 0));
+    };
+    [cEdad, cRet, cAporte].forEach(el => el.addEventListener('input', run));
+    run();
+  }
+
+  // Calculadora de suma asegurada (seguro de vida)
+  const sIngreso = $('#sIngreso');
+  if (sIngreso) {
+    const sAnios = $('#sAnios');
+    const run = () => {
+      $('#sAniosOut').textContent = sAnios.value;
+      animateMoney($('#sTotal'), Math.max(0, +sIngreso.value || 0) * 12 * (+sAnios.value));
+    };
+    [sIngreso, sAnios].forEach(el => el.addEventListener('input', run));
+    run();
+  }
+
+  // Simulador de crecimiento (inversión)
+  const gAporte = $('#gAporte');
+  if (gAporte) {
+    const gInicial = $('#gInicial');
+    const run = () => {
+      const P = Math.max(0, +gAporte.value || 0), PV = Math.max(0, +gInicial.value || 0), i = 0.10 / 12;
+      animateMoney($('#g5'), fvAnnuity(P, i, 60, PV));
+      animateMoney($('#g10'), fvAnnuity(P, i, 120, PV));
+      animateMoney($('#g20'), fvAnnuity(P, i, 240, PV));
+    };
+    [gAporte, gInicial].forEach(el => el.addEventListener('input', run));
+    run();
+  }
+
   /* Formulario de leads -> guardar + WhatsApp + gracias */
   // Para guardar los leads: pega aquí la URL de tu Google Apps Script (Web App).
   // Déjalo vacío para no guardar (el lead igual llega por WhatsApp).
@@ -135,8 +191,8 @@
         try {
           fetch(LEAD_ENDPOINT, {
             method: 'POST', mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nombre: nombre.value, whatsapp: whatsapp.value, servicio, fecha: new Date().toISOString() })
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({ nombre: nombre.value, whatsapp: whatsapp.value, servicio, origen: location.pathname, fecha: new Date().toISOString() })
           });
         } catch (e) { /* no bloquear la conversión */ }
       }

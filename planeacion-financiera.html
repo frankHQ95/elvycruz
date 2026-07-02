@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
-  <link rel="stylesheet" href="css/planeacion-financiera/planeacion-financiera.css" />
+  <link rel="stylesheet" href="css/planeacion-financiera/planeacion-financiera.css?v=3" />
 
   <!-- ===== META PIXEL (reemplazar PIXEL_ID) =====
   <script>!function(f,b,e,v,n,t,s2){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s2=b.getElementsByTagName(e)[0];s2.parentNode.insertBefore(t,s2)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID');fbq('track','PageView');</script>
@@ -53,39 +53,18 @@
   </header>
 
   <main>
-    <!-- HERO VSL -->
-    <section class="vsl-hero">
-      <div class="container vsl-inner">
-        <span class="vsl-eyebrow reveal"><span class="dot"></span>Planeación Financiera</span>
-        <h1 class="reveal" data-delay="80">Una estrategia clara para <span class="text-gold">todas tus metas.</span></h1>
-        <p class="vsl-hero-sub reveal" data-delay="160">Retiro, protección, inversión y patrimonio en un solo plan integral. Mira cómo ordenar tus finanzas y avanzar con rumbo.</p>
-
-        <!-- VIDEO VSL · agrega la URL del video en data-video (YouTube/Vimeo/MP4) -->
-        <div class="video-wrap reveal" id="videoWrap" data-delay="220" data-video="" role="button" tabindex="0" aria-label="Reproducir video">
-          <div class="video-fallback"><span>Finanzas con Visión</span></div>
-          <span class="video-tag"><span class="rec"></span> VIDEO · Míralo antes de decidir</span>
-          <button class="play-btn" aria-label="Reproducir">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-          </button>
+    <!-- HERO VSL (variante por servicio · agrega la URL del video en data-video) -->
+    <section class="vsl-hero vsl-hero--split">
+      <div class="container vsl-split">
+        <div class="vsl-split-copy">
+          <span class="vsl-eyebrow reveal"><span class="dot"></span>Planeación Financiera</span>
+          <h1 class="reveal" data-delay="80">Una estrategia clara para <span class="text-gold">todas tus metas.</span></h1>
+          <p class="vsl-hero-sub reveal" data-delay="160">Retiro, protección, inversión y patrimonio en un solo plan integral. Mira cómo ordenar tus finanzas y avanzar con rumbo.</p>
+          <div class="vsl-cta reveal" data-delay="300"><div class="btn-row"><a href="#agenda" class="btn btn-gold btn-lg" data-cta="hero-agenda">Quiero mi asesoría gratis</a><a href="https://wa.me/525559544198?text=Hola%20Elvia%2C%20vi%20tu%20informaci%C3%B3n%20sobre%20Planeación%20Financiera%20y%20quiero%20agendar%20mi%20asesor%C3%ADa" class="btn btn-ghost btn-lg" style="color:#fff;border-color:rgba(255,255,255,.35)" target="_blank" rel="noopener">Escribir por WhatsApp</a></div><ul class="vsl-trust"><li>✓ Primera asesoría sin costo</li><li>✓ 100% personalizada</li><li>✓ Sin compromiso</li></ul></div>
         </div>
-
-        <div class="vsl-cta reveal" data-delay="300">
-          <div class="btn-row">
-            <a href="#agenda" class="btn btn-gold btn-lg" data-cta="hero-agenda">Quiero mi asesoría gratis</a>
-            <a href="https://wa.me/525559544198?text=Hola%20Elvia%2C%20vi%20tu%20informaci%C3%B3n%20sobre%20Planeación%20Financiera%20y%20quiero%20agendar%20mi%20asesor%C3%ADa" class="btn btn-ghost btn-lg" style="color:#fff;border-color:rgba(255,255,255,.35)" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-          </div>
-          <ul class="vsl-trust">
-            <li>✓ Primera asesoría sin costo</li>
-            <li>✓ 100% personalizada</li>
-            <li>✓ Sin compromiso</li>
-          </ul>
-        </div>
+        <div class="vsl-split-video reveal" data-delay="120"><div class="video-wrap reveal" id="videoWrap" data-delay="220" data-video="" role="button" tabindex="0" aria-label="Reproducir video"><div class="video-fallback"><span>Finanzas con Visión</span></div><span class="video-tag"><span class="rec"></span> VIDEO · Míralo antes de decidir</span><button class="play-btn" aria-label="Reproducir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div></div>
       </div>
-      <div class="hero-bg" aria-hidden="true">
-        <span class="aurora aurora-1"></span>
-        <span class="aurora aurora-2"></span>
-        <span class="grid-overlay"></span>
-      </div>
+      <div class="hero-bg" aria-hidden="true"><span class="aurora aurora-1"></span><span class="aurora aurora-2"></span><span class="grid-overlay"></span></div>
     </section>
 
     <!-- PROBLEMA -->
@@ -147,6 +126,9 @@
         </div>
       </div>
     </section>
+
+    <!-- SECCIÓN ESTRELLA (única por servicio) -->
+    <section class="section signature sig-rueda" id="herramienta"><div class="container"><div class="section-head reveal"><span class="kicker">Visión 360°</span><h2>Todo tu dinero, en un solo plan.</h2><p class="section-lead">La planeación integral conecta estas seis áreas para que avancen juntas.</p></div><div class="rueda"><div class="rueda-hub reveal"><span>360°</span><strong>Tu plan integral</strong></div><div class="rueda-grid"><div class="rueda-item reveal"><svg class="ri-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h12"/></svg>Ahorro</div><div class="rueda-item reveal" data-delay="70"><svg class="ri-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5-2 7H7c0-2-2-4-2-7a7 7 0 0 1 7-7z"/></svg>Retiro</div><div class="rueda-item reveal" data-delay="140"><svg class="ri-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z"/></svg>Protección</div><div class="rueda-item reveal" data-delay="210"><svg class="ri-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 16l3-4 3 2 5-7"/></svg>Inversión</div><div class="rueda-item reveal" data-delay="280"><svg class="ri-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6M5 10v9h14v-9"/></svg>Patrimonio</div><div class="rueda-item reveal" data-delay="350"><svg class="ri-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6v2H9zM7 6h10v14H7z"/></svg>Fiscal</div></div></div></div></section>
 
     <!-- QUÉ INCLUYE -->
     <section class="section" id="incluye">
@@ -357,6 +339,6 @@
     </div>
   </div>
 
-  <script src="js/shared/vsl.js" defer></script>
+  <script src="js/shared/vsl.js?v=3" defer></script>
 </body>
 </html>

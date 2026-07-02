@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
-  <link rel="stylesheet" href="css/seguro-vida/seguro-vida.css" />
+  <link rel="stylesheet" href="css/seguro-vida/seguro-vida.css?v=3" />
 
   <!-- ===== META PIXEL (reemplazar PIXEL_ID) =====
   <script>!function(f,b,e,v,n,t,s2){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s2=b.getElementsByTagName(e)[0];s2.parentNode.insertBefore(t,s2)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID');fbq('track','PageView');</script>
@@ -53,39 +53,18 @@
   </header>
 
   <main>
-    <!-- HERO VSL -->
-    <section class="vsl-hero">
-      <div class="container vsl-inner">
-        <span class="vsl-eyebrow reveal"><span class="dot"></span>Seguro de Vida</span>
-        <h1 class="reveal" data-delay="80">Si mañana faltaras, <span class="text-gold">¿tu familia estaría protegida?</span></h1>
-        <p class="vsl-hero-sub reveal" data-delay="160">Nadie quiere pensarlo, pero planearlo es el acto de amor más grande. Mira cómo un seguro de vida blinda el futuro de quienes más amas.</p>
-
-        <!-- VIDEO VSL · agrega la URL del video en data-video (YouTube/Vimeo/MP4) -->
-        <div class="video-wrap reveal" id="videoWrap" data-delay="220" data-video="" role="button" tabindex="0" aria-label="Reproducir video">
-          <div class="video-fallback"><span>Finanzas con Visión</span></div>
-          <span class="video-tag"><span class="rec"></span> VIDEO · Míralo antes de decidir</span>
-          <button class="play-btn" aria-label="Reproducir">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-          </button>
+    <!-- HERO VSL (variante por servicio · agrega la URL del video en data-video) -->
+    <section class="vsl-hero vsl-hero--split">
+      <div class="container vsl-split">
+        <div class="vsl-split-copy">
+          <span class="vsl-eyebrow reveal"><span class="dot"></span>Seguro de Vida</span>
+          <h1 class="reveal" data-delay="80">Si mañana faltaras, <span class="text-gold">¿tu familia estaría protegida?</span></h1>
+          <p class="vsl-hero-sub reveal" data-delay="160">Nadie quiere pensarlo, pero planearlo es el acto de amor más grande. Mira cómo un seguro de vida blinda el futuro de quienes más amas.</p>
+          <div class="vsl-cta reveal" data-delay="300"><div class="btn-row"><a href="#agenda" class="btn btn-gold btn-lg" data-cta="hero-agenda">Quiero mi asesoría gratis</a><a href="https://wa.me/525559544198?text=Hola%20Elvia%2C%20vi%20tu%20informaci%C3%B3n%20sobre%20Seguro%20de%20Vida%20y%20quiero%20agendar%20mi%20asesor%C3%ADa" class="btn btn-ghost btn-lg" style="color:#fff;border-color:rgba(255,255,255,.35)" target="_blank" rel="noopener">Escribir por WhatsApp</a></div><ul class="vsl-trust"><li>✓ Primera asesoría sin costo</li><li>✓ 100% personalizada</li><li>✓ Sin compromiso</li></ul></div>
         </div>
-
-        <div class="vsl-cta reveal" data-delay="300">
-          <div class="btn-row">
-            <a href="#agenda" class="btn btn-gold btn-lg" data-cta="hero-agenda">Quiero mi asesoría gratis</a>
-            <a href="https://wa.me/525559544198?text=Hola%20Elvia%2C%20vi%20tu%20informaci%C3%B3n%20sobre%20Seguro%20de%20Vida%20y%20quiero%20agendar%20mi%20asesor%C3%ADa" class="btn btn-ghost btn-lg" style="color:#fff;border-color:rgba(255,255,255,.35)" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-          </div>
-          <ul class="vsl-trust">
-            <li>✓ Primera asesoría sin costo</li>
-            <li>✓ 100% personalizada</li>
-            <li>✓ Sin compromiso</li>
-          </ul>
-        </div>
+        <div class="vsl-split-video reveal" data-delay="120"><div class="video-wrap reveal" id="videoWrap" data-delay="220" data-video="" role="button" tabindex="0" aria-label="Reproducir video"><div class="video-fallback"><span>Finanzas con Visión</span></div><span class="video-tag"><span class="rec"></span> VIDEO · Míralo antes de decidir</span><button class="play-btn" aria-label="Reproducir"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div></div>
       </div>
-      <div class="hero-bg" aria-hidden="true">
-        <span class="aurora aurora-1"></span>
-        <span class="aurora aurora-2"></span>
-        <span class="grid-overlay"></span>
-      </div>
+      <div class="hero-bg" aria-hidden="true"><span class="aurora aurora-1"></span><span class="aurora aurora-2"></span><span class="grid-overlay"></span></div>
     </section>
 
     <!-- PROBLEMA -->
@@ -144,6 +123,27 @@
             <h3>Más que protección</h3>
             <p>Algunos planes combinan protección con ahorro e inversión.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN ESTRELLA (única por servicio) -->
+    <section class="section signature sig-suma" id="herramienta">
+      <div class="container calc-grid">
+        <div class="calc-intro reveal">
+          <span class="kicker">Calcula tu protección</span>
+          <h2>¿De cuánto debería ser tu seguro de vida?</h2>
+          <p class="section-lead">Una guía rápida: cuánto necesitaría tu familia para sostener su estilo de vida si tú faltaras.</p>
+          <ul class="calc-points"><li>✓ Cálculo orientativo</li><li>✓ Basado en tu ingreso</li><li>✓ Sin compromiso</li></ul>
+        </div>
+        <div class="calc-card reveal" data-delay="120">
+          <div class="calc-form">
+            <div class="field"><label>Tu ingreso mensual</label><div class="input-money"><span>$</span><input type="number" id="sIngreso" value="40000" min="5000" step="1000" inputmode="numeric"><small>MXN</small></div></div>
+            <div class="field"><label>Años de respaldo para tu familia: <output id="sAniosOut">10</output></label><input type="range" id="sAnios" min="5" max="25" value="10"></div>
+            <div class="calc-result"><span class="calc-result-label">Suma asegurada sugerida</span><strong class="calc-result-value" id="sTotal">$0</strong></div>
+            <a href="#agenda" class="btn btn-gold btn-block" data-cta="suma-agenda">Quiero proteger a mi familia</a>
+            <p class="calc-disclaimer">*Estimación orientativa (ingreso × 12 × años). Tu suma ideal se define en tu asesoría.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -357,6 +357,6 @@
     </div>
   </div>
 
-  <script src="js/shared/vsl.js" defer></script>
+  <script src="js/shared/vsl.js?v=3" defer></script>
 </body>
 </html>
